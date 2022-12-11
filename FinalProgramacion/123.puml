@@ -1,0 +1,93 @@
+@startuml
+class Mundial.EtapaMundial {
+- String descripcionEtapa
+- ArrayList<Partido> partidos
++ String getDescripcionEtapa()
++ void setDescripcionEtapa(String)
++ void addPartido(Partido)
+# ArrayList<Partido> getPartidos()
++ ArrayList<Equipo> getEquiposQueAvanzan()
+}
+class Mundial.Equipo {
+- String nombre
+- ArrayList<Partido> partidosJugados
+- int puntos
++ String getNombre()
++ void setNombre(String)
++ int getPuntaje()
++ void setPuntaje(int)
+}
+class Mundial.Grupo {
++ ArrayList<Equipo> getEquiposQueAvanzan()
+}
+class Mundial.Llave {
++ ArrayList<Equipo> getEquiposQueAvanzan()
+}
+class Main {
++ {static} void main(String[])
+}
+class Main.Garaje {
+- int precioXrueda
+- int capacidadMaximaLocal
+- ArrayList<Vehiculo> vehiculos
++ int getPrecioXrueda()
++ void setPrecioXrueda(int)
++ int getCapacidadMaximaLocal()
++ void setCapacidadMaximaLocal(int)
++ ArrayList<Vehiculo> getVehiculos()
++ void setVehiculos(ArrayList<Vehiculo>)
++ void sacarVehiculo(Vehiculo)
++ void AgregarAuto(Vehiculo)
++ double Valor4ruedas()
++ double maxKmRueda()
+}
+class Garaje.Auto {
+- int numDePuertas
++ int getNumDePuertas()
++ void setNumDePuertas(int)
+}
+class Garaje.Moto {
+- int cc
++ int getCc()
++ void setCc(int)
+}note left of Garaje.Moto::cc
+ Con cc me refiero a la cilindrada de la moto
+end note
+
+class Mundial.Partido {
+- Date fecha
+- Equipo local
+- Equipo visitante
+- Resultado resultado
++ Resultado getResultado()
++ Equipo getLocal()
++ Equipo getVisitante()
++ void setEquipo(EtapaMundial)
+}
+class Garaje.Vehiculo {
+- double km
+- int numRuedas
+- String marca
++ double getKm()
++ void setKm(double)
++ int getNumRuedas()
++ void setNumRuedas(int)
++ String getMarca()
++ void setMarca(String)
+}
+class Mundial.Resultado {
+- int golesLocal
+- int golesVisita
++ int getGolesLocal()
++ int getGolesVisitante()
++ boolean ganoLocal()
++ boolean empate()
+}
+
+
+Mundial.EtapaMundial <|-- Mundial.Grupo
+Mundial.EtapaMundial <|-- Mundial.Llave
+Main +.. Main.Garaje
+Garaje.Vehiculo <|-- Garaje.Auto
+Garaje.Vehiculo <|-- Garaje.Moto
+@enduml
