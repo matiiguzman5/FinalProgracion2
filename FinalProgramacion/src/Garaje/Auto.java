@@ -15,4 +15,5 @@ public class Auto extends Vehiculo{
         super (km, numRuedas, marca);
         setNumDePuertas(numPuertas);
     }
+
 }

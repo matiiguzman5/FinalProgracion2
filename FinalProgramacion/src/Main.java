@@ -245,7 +245,45 @@ public class Main {
         private int capacidadMaximaLocal;
         private ArrayList<Vehiculo> vehiculos;
 
-    }
+        public int getPrecioXrueda() {
+            return precioXrueda;
+        }
 
+        public void setPrecioXrueda(int precioXrueda) {
+            this.precioXrueda = precioXrueda;
+        }
+
+        public int getCapacidadMaximaLocal() {
+            return capacidadMaximaLocal;
+        }
+
+        public void setCapacidadMaximaLocal(int capacidadMaximaLocal) {
+            this.capacidadMaximaLocal = capacidadMaximaLocal;
+        }
+
+        public ArrayList<Vehiculo> getVehiculos() {
+            return vehiculos;
+        }
+
+        public void setVehiculos(ArrayList<Vehiculo> vehiculos) {
+            this.vehiculos = vehiculos;
+        }
+
+        public void sacarVehiculo (Vehiculo vehiculo){
+            getVehiculos().remove(vehiculo);
+        }
+        public void AgregarAuto (Vehiculo vehiculo){
+            getVehiculos().add(vehiculo);
+        }
+
+        public double Valor4ruedas (){
+            return 240.000;
+        }
+        public double maxKmRueda () {
+            return 200.000;
+        }
+
+
+    }
 }
 
