@@ -1,4 +1,5 @@
 import Mundial.*;
+import Garaje.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -235,7 +236,16 @@ public class Main {
 
     }
 
-    // Main de Garaje 
+    // Main de Garaje
+
+
+    public class Garaje {
+
+        private int precioXrueda;
+        private int capacidadMaximaLocal;
+        private ArrayList<Vehiculo> vehiculos;
+
+    }
 
 }
 
